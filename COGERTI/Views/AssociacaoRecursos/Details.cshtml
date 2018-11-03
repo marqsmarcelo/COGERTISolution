@@ -1,0 +1,66 @@
+﻿@model COGERTI.Models.AssociacaoRecurso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssociacaoRecurso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcionario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcionario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recurso.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recurso.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAssociacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataAssociacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataLiberacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataLiberacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotivoLiberacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotivoLiberacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermoResponsabilidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermoResponsabilidade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

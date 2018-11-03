@@ -17,7 +17,8 @@ namespace COGERTI.Controllers
         // GET: CentrosDeCustos
         public ActionResult Index()
         {
-            return View(db.CentrosDeCustos.ToList());
+            var centrosDeCustos = db.CentrosDeCustos.Include(c => c.CoordenadorCC).Include(c => c.GestorCC);
+            return View(centrosDeCustos.ToList());
         }
 
         // GET: CentrosDeCustos/Details/5
@@ -38,6 +39,8 @@ namespace COGERTI.Controllers
         // GET: CentrosDeCustos/Create
         public ActionResult Create()
         {
+            ViewBag.CoordenadorUPI = new SelectList(db.Funcionarios, "UPI", "Nome");
+            ViewBag.GestorUPI = new SelectList(db.Funcionarios, "UPI", "Nome");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace COGERTI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,GestorUPI,CoordenadorUPI")] CentroDeCusto centroDeCusto)
+        public ActionResult Create([Bind(Include = "Id,Nome,CoordenadorUPI,GestorUPI")] CentroDeCusto centroDeCusto)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace COGERTI.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CoordenadorUPI = new SelectList(db.Funcionarios, "UPI", "Nome", centroDeCusto.CoordenadorUPI);
+            ViewBag.GestorUPI = new SelectList(db.Funcionarios, "UPI", "Nome", centroDeCusto.GestorUPI);
             return View(centroDeCusto);
         }
 
@@ -70,6 +75,8 @@ namespace COGERTI.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CoordenadorUPI = new SelectList(db.Funcionarios, "UPI", "Nome", centroDeCusto.CoordenadorUPI);
+            ViewBag.GestorUPI = new SelectList(db.Funcionarios, "UPI", "Nome", centroDeCusto.GestorUPI);
             return View(centroDeCusto);
         }
 
@@ -78,7 +85,7 @@ namespace COGERTI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,GestorUPI,CoordenadorUPI")] CentroDeCusto centroDeCusto)
+        public ActionResult Edit([Bind(Include = "Id,Nome,CoordenadorUPI,GestorUPI")] CentroDeCusto centroDeCusto)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace COGERTI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CoordenadorUPI = new SelectList(db.Funcionarios, "UPI", "Nome", centroDeCusto.CoordenadorUPI);
+            ViewBag.GestorUPI = new SelectList(db.Funcionarios, "UPI", "Nome", centroDeCusto.GestorUPI);
             return View(centroDeCusto);
         }
 

@@ -26,18 +26,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GestorUPI, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CoordenadorUPI, "CoordenadorUPI", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GestorUPI, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GestorUPI, "", new { @class = "text-danger" })
+                @Html.DropDownList("CoordenadorUPI", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CoordenadorUPI, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CoordenadorUPI, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GestorUPI, "GestorUPI", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CoordenadorUPI, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CoordenadorUPI, "", new { @class = "text-danger" })
+                @Html.DropDownList("GestorUPI", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GestorUPI, "", new { @class = "text-danger" })
             </div>
         </div>
 

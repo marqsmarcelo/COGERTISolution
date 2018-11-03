@@ -13,7 +13,7 @@ namespace COGERTI.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811031955476_InitialMigration"; }
+            get { return "201811032050468_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

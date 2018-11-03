@@ -54,20 +54,18 @@ namespace COGERTI.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Nome = c.String(),
-                        GestorUPI = c.Int(),
                         CoordenadorUPI = c.Int(),
-                        CoordenadorCC_UPI = c.Int(),
-                        GestorCC_UPI = c.Int(),
+                        GestorUPI = c.Int(),
                         Funcionario_UPI = c.Int(),
                         Funcionario_UPI1 = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Funcionarios", t => t.CoordenadorCC_UPI)
-                .ForeignKey("dbo.Funcionarios", t => t.GestorCC_UPI)
+                .ForeignKey("dbo.Funcionarios", t => t.CoordenadorUPI)
+                .ForeignKey("dbo.Funcionarios", t => t.GestorUPI)
                 .ForeignKey("dbo.Funcionarios", t => t.Funcionario_UPI)
                 .ForeignKey("dbo.Funcionarios", t => t.Funcionario_UPI1)
-                .Index(t => t.CoordenadorCC_UPI)
-                .Index(t => t.GestorCC_UPI)
+                .Index(t => t.CoordenadorUPI)
+                .Index(t => t.GestorUPI)
                 .Index(t => t.Funcionario_UPI)
                 .Index(t => t.Funcionario_UPI1);
             
@@ -276,9 +274,9 @@ namespace COGERTI.Migrations
             DropForeignKey("dbo.CentrosDeCustos", "Funcionario_UPI1", "dbo.Funcionarios");
             DropForeignKey("dbo.CentrosDeCustos", "Funcionario_UPI", "dbo.Funcionarios");
             DropForeignKey("dbo.Funcionarios", "CentroDeCustoId", "dbo.CentrosDeCustos");
-            DropForeignKey("dbo.CentrosDeCustos", "GestorCC_UPI", "dbo.Funcionarios");
+            DropForeignKey("dbo.CentrosDeCustos", "GestorUPI", "dbo.Funcionarios");
             DropForeignKey("dbo.Funcionarios", "CentroDeCusto_Id", "dbo.CentrosDeCustos");
-            DropForeignKey("dbo.CentrosDeCustos", "CoordenadorCC_UPI", "dbo.Funcionarios");
+            DropForeignKey("dbo.CentrosDeCustos", "CoordenadorUPI", "dbo.Funcionarios");
             DropForeignKey("dbo.AssociacaoRecursos", "FuncionarioUPI", "dbo.Funcionarios");
             DropIndex("dbo.UsuariosVpn", new[] { "Id" });
             DropIndex("dbo.LinhasMoveis", new[] { "TipoPlanoMovelId" });
@@ -295,8 +293,8 @@ namespace COGERTI.Migrations
             DropIndex("dbo.Recursos", new[] { "LocalSiteId" });
             DropIndex("dbo.CentrosDeCustos", new[] { "Funcionario_UPI1" });
             DropIndex("dbo.CentrosDeCustos", new[] { "Funcionario_UPI" });
-            DropIndex("dbo.CentrosDeCustos", new[] { "GestorCC_UPI" });
-            DropIndex("dbo.CentrosDeCustos", new[] { "CoordenadorCC_UPI" });
+            DropIndex("dbo.CentrosDeCustos", new[] { "GestorUPI" });
+            DropIndex("dbo.CentrosDeCustos", new[] { "CoordenadorUPI" });
             DropIndex("dbo.Funcionarios", new[] { "CentroDeCusto_Id" });
             DropIndex("dbo.Funcionarios", new[] { "CentroDeCustoId" });
             DropIndex("dbo.Funcionarios", new[] { "StatusFuncionarioId" });

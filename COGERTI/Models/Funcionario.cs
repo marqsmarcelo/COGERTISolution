@@ -39,14 +39,15 @@ namespace COGERTI.Models
         [Display(Name = "Centro de Custo")]
         public int CentroDeCustoId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CentroDeCusto> CoordenadorCC { get; set; }
         public virtual LocalSite LocalSite { get; set; }
         public virtual StatusFuncionario StatusFuncionario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssociacaoRecurso> AssociacaoRecurso { get; set; }
+        public virtual CentroDeCusto CentroDeCusto { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CentroDeCusto> CoordenadorCC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CentroDeCusto> GestorCC { get; set; }
-        public virtual CentroDeCusto CentroDeCusto { get; set; }
     }
 }
