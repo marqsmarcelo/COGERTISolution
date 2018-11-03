@@ -155,30 +155,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CentrosDeCustosController.cs" />
     <Compile Include="Controllers\ComputadoresController.cs" />
+    <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811031715570_InitialMigration1415.cs" />
-    <Compile Include="Migrations\201811031715570_InitialMigration1415.Designer.cs">
-      <DependentUpon>201811031715570_InitialMigration1415.cs</DependentUpon>
+    <Compile Include="Migrations\201811031955476_InitialMigration.cs" />
+    <Compile Include="Migrations\201811031955476_InitialMigration.Designer.cs">
+      <DependentUpon>201811031955476_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811031735133_PopulateTipos.cs" />
-    <Compile Include="Migrations\201811031735133_PopulateTipos.Designer.cs">
-      <DependentUpon>201811031735133_PopulateTipos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811031803094_PopulateTipos1.cs" />
-    <Compile Include="Migrations\201811031803094_PopulateTipos1.Designer.cs">
-      <DependentUpon>201811031803094_PopulateTipos1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811031807276_Validacao.cs" />
-    <Compile Include="Migrations\201811031807276_Validacao.Designer.cs">
-      <DependentUpon>201811031807276_Validacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811031808036_PopulateTiposEStatus.cs" />
-    <Compile Include="Migrations\201811031808036_PopulateTiposEStatus.Designer.cs">
-      <DependentUpon>201811031808036_PopulateTiposEStatus.cs</DependentUpon>
+    <Compile Include="Migrations\201811031959119_BasicPopulation.cs" />
+    <Compile Include="Migrations\201811031959119_BasicPopulation.Designer.cs">
+      <DependentUpon>201811031959119_BasicPopulation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AparelhoCelular.cs" />
@@ -246,6 +236,16 @@
     <Content Include="Views\Computadores\Details.cshtml" />
     <Content Include="Views\Computadores\Edit.cshtml" />
     <Content Include="Views\Computadores\Index.cshtml" />
+    <Content Include="Views\Funcionarios\Create.cshtml" />
+    <Content Include="Views\Funcionarios\Delete.cshtml" />
+    <Content Include="Views\Funcionarios\Details.cshtml" />
+    <Content Include="Views\Funcionarios\Edit.cshtml" />
+    <Content Include="Views\Funcionarios\Index.cshtml" />
+    <Content Include="Views\CentrosDeCustos\Create.cshtml" />
+    <Content Include="Views\CentrosDeCustos\Delete.cshtml" />
+    <Content Include="Views\CentrosDeCustos\Details.cshtml" />
+    <Content Include="Views\CentrosDeCustos\Edit.cshtml" />
+    <Content Include="Views\CentrosDeCustos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,20 +264,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811031715570_InitialMigration1415.resx">
-      <DependentUpon>201811031715570_InitialMigration1415.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811031955476_InitialMigration.resx">
+      <DependentUpon>201811031955476_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811031735133_PopulateTipos.resx">
-      <DependentUpon>201811031735133_PopulateTipos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811031803094_PopulateTipos1.resx">
-      <DependentUpon>201811031803094_PopulateTipos1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811031807276_Validacao.resx">
-      <DependentUpon>201811031807276_Validacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811031808036_PopulateTiposEStatus.resx">
-      <DependentUpon>201811031808036_PopulateTiposEStatus.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811031959119_BasicPopulation.resx">
+      <DependentUpon>201811031959119_BasicPopulation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

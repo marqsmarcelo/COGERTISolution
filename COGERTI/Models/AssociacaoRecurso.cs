@@ -20,9 +20,11 @@ namespace COGERTI.Models
         public int Id { get; set; }
 
         [Display(Name = "Matrícula")]
+        [Required]
         public int FuncionarioUPI { get; set; }
 
         [Display(Name = "ID do Recurso")]
+        [Required]
         public int RecursoId { get; set; }
 
         [DataType(DataType.Date)]

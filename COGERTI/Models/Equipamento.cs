@@ -19,15 +19,21 @@ namespace COGERTI.Models
     public abstract partial class Equipamento : Recurso
     {
         [Display(Name = "Serial No")]
+        [Required]
         public string SerialNo { get; set; }
+
         [Display(Name = "Patrimônio")]
-        [MaxLength(5)]
+        [StringLength(6, MinimumLength = 4, ErrorMessage = "O patrimônio deve ter entre 4 e 6 caractéres.")]
         public String Patrimonio { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Data da Fabricação")]
         public Nullable<System.DateTime> DataFabricacao { get; set; }
+
+        [Required]
         public string Marca { get; set; }
+        [Required]
         public string Modelo { get; set; }
         [Display(Name = "Propriedade")]
         public int PropriedadeId { get; set; }

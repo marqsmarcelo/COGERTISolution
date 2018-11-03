@@ -26,8 +26,9 @@ namespace COGERTI.Models
     
         public int Id { get; set; }
         [Display(Name = "Código do DDD")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "O DDD é composto por 2 números.")]
         public string DddCodigo { get; set; }
-        [MaxLength(2),MinLength(2)]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "A Unidade Federativa é composta por duas letras.")]
         public String UF { get; set; }
         [Display(Name = "Região")]
         public String Regiao { get; set; }

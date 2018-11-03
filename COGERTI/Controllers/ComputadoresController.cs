@@ -17,7 +17,7 @@ namespace COGERTI.Controllers
         // GET: Computadores
         public ActionResult Index()
         {
-            var computadores = db.Computadores.Include(c => c.Propriedade).Include(c => c.StatusEquipamento).Include(c => c.TipoComputador);
+            var computadores = db.Computadores.Include(c => c.LocalSite).Include(c => c.Propriedade).Include(c => c.StatusEquipamento).Include(c => c.TipoComputador);
             return View(computadores.ToList());
         }
 
@@ -39,6 +39,7 @@ namespace COGERTI.Controllers
         // GET: Computadores/Create
         public ActionResult Create()
         {
+            ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome");
             ViewBag.PropriedadeId = new SelectList(db.PropriedadeEquipamentos, "Id", "Lote");
             ViewBag.StatusEquipamentoId = new SelectList(db.StatusEquipamentos, "Id", "Descricao");
             ViewBag.TipoComputadorId = new SelectList(db.TiposComputadores, "Id", "Descricao");
@@ -50,7 +51,7 @@ namespace COGERTI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PlantaId,SerialNo,Patrimonio,DataFabricacao,Marca,Modelo,PropriedadeId,StatusEquipamentoId,TipoComputadorId")] Computador computador)
+        public ActionResult Create([Bind(Include = "Id,LocalSiteId,SerialNo,Patrimonio,DataFabricacao,Marca,Modelo,PropriedadeId,StatusEquipamentoId,TipoComputadorId")] Computador computador)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +60,7 @@ namespace COGERTI.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome", computador.LocalSiteId);
             ViewBag.PropriedadeId = new SelectList(db.PropriedadeEquipamentos, "Id", "Lote", computador.PropriedadeId);
             ViewBag.StatusEquipamentoId = new SelectList(db.StatusEquipamentos, "Id", "Descricao", computador.StatusEquipamentoId);
             ViewBag.TipoComputadorId = new SelectList(db.TiposComputadores, "Id", "Descricao", computador.TipoComputadorId);
@@ -77,6 +79,7 @@ namespace COGERTI.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome", computador.LocalSiteId);
             ViewBag.PropriedadeId = new SelectList(db.PropriedadeEquipamentos, "Id", "Lote", computador.PropriedadeId);
             ViewBag.StatusEquipamentoId = new SelectList(db.StatusEquipamentos, "Id", "Descricao", computador.StatusEquipamentoId);
             ViewBag.TipoComputadorId = new SelectList(db.TiposComputadores, "Id", "Descricao", computador.TipoComputadorId);
@@ -88,7 +91,7 @@ namespace COGERTI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PlantaId,SerialNo,Patrimonio,DataFabricacao,Marca,Modelo,PropriedadeId,StatusEquipamentoId,TipoComputadorId")] Computador computador)
+        public ActionResult Edit([Bind(Include = "Id,LocalSiteId,SerialNo,Patrimonio,DataFabricacao,Marca,Modelo,PropriedadeId,StatusEquipamentoId,TipoComputadorId")] Computador computador)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +99,7 @@ namespace COGERTI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome", computador.LocalSiteId);
             ViewBag.PropriedadeId = new SelectList(db.PropriedadeEquipamentos, "Id", "Lote", computador.PropriedadeId);
             ViewBag.StatusEquipamentoId = new SelectList(db.StatusEquipamentos, "Id", "Descricao", computador.StatusEquipamentoId);
             ViewBag.TipoComputadorId = new SelectList(db.TiposComputadores, "Id", "Descricao", computador.TipoComputadorId);

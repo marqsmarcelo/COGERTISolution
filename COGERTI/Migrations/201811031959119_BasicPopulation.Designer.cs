@@ -7,13 +7,13 @@ namespace COGERTI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PopulateTipos : IMigrationMetadata
+    public sealed partial class BasicPopulation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateTipos));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(BasicPopulation));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811031735133_PopulateTipos"; }
+            get { return "201811031959119_BasicPopulation"; }
         }
         
         string IMigrationMetadata.Source

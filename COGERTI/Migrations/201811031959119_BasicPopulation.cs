@@ -3,7 +3,7 @@ namespace COGERTI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulateTiposEStatus : DbMigration
+    public partial class BasicPopulation : DbMigration
     {
         public override void Up()
         {
@@ -27,10 +27,10 @@ namespace COGERTI.Migrations
             Sql("SET IDENTITY_INSERT CentrosDeCustos OFF");
 
             Sql("SET IDENTITY_INSERT Funcionarios ON");
-            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, PlantaId, StatusFuncionarioId, CentroDeCustoId) VALUES (13224, 'Marcelo', 'Marques', 'mmarques', 1, 2, 7202001)");
-            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, PlantaId, StatusFuncionarioId, CentroDeCustoId) VALUES (13221, 'Caio', 'Dias', 'cdias', 3, 2, 7402001)");
-            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, PlantaId, StatusFuncionarioId, CentroDeCustoId) VALUES (13220, 'Bruno', 'Dolgoff', 'bdolgoff', 2, 2, 7302001)");
-            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, PlantaId, StatusFuncionarioId, CentroDeCustoId) VALUES (13222, 'Vitor', 'Reis', 'vreis', 2, 2, 7302001)");
+            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, LocalSiteId, StatusFuncionarioId, CentroDeCustoId) VALUES (13224, 'Marcelo', 'Marques', 'mmarques', 1, 2, 7202001)");
+            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, LocalSiteId, StatusFuncionarioId, CentroDeCustoId) VALUES (13221, 'Caio', 'Dias', 'cdias', 3, 2, 7402001)");
+            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, LocalSiteId, StatusFuncionarioId, CentroDeCustoId) VALUES (13220, 'Bruno', 'Dolgoff', 'bdolgoff', 2, 2, 7302001)");
+            Sql("INSERT INTO Funcionarios(UPI, Nome, Sobrenome, UsuarioGad, LocalSiteId, StatusFuncionarioId, CentroDeCustoId) VALUES (13222, 'Vitor', 'Reis', 'vreis', 2, 2, 7302001)");
             Sql("SET IDENTITY_INSERT Funcionarios OFF");
 
             Sql("UPDATE CentrosDeCustos SET GestorUPI=13220, CoordenadorUPI=13224 WHERE Id=7202001");

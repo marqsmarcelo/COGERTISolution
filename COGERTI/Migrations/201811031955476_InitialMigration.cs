@@ -3,7 +3,7 @@ namespace COGERTI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration1415 : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -33,21 +33,20 @@ namespace COGERTI.Migrations
                         Nome = c.String(),
                         Sobrenome = c.String(),
                         UsuarioGad = c.String(),
-                        PlantaId = c.Int(nullable: false),
+                        LocalSiteId = c.Int(nullable: false),
                         StatusFuncionarioId = c.Int(nullable: false),
                         CentroDeCustoId = c.Int(nullable: false),
                         CentroDeCusto_Id = c.Int(),
-                        LocalSite_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.UPI)
                 .ForeignKey("dbo.CentrosDeCustos", t => t.CentroDeCusto_Id)
                 .ForeignKey("dbo.CentrosDeCustos", t => t.CentroDeCustoId, cascadeDelete: true)
-                .ForeignKey("dbo.LocalSites", t => t.LocalSite_Id)
+                .ForeignKey("dbo.LocalSites", t => t.LocalSiteId, cascadeDelete: true)
                 .ForeignKey("dbo.StatusFuncionarios", t => t.StatusFuncionarioId, cascadeDelete: true)
+                .Index(t => t.LocalSiteId)
                 .Index(t => t.StatusFuncionarioId)
                 .Index(t => t.CentroDeCustoId)
-                .Index(t => t.CentroDeCusto_Id)
-                .Index(t => t.LocalSite_Id);
+                .Index(t => t.CentroDeCusto_Id);
             
             CreateTable(
                 "dbo.CentrosDeCustos",
@@ -78,8 +77,8 @@ namespace COGERTI.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Nome = c.String(),
-                        Sigla = c.String(),
-                        UF = c.String(),
+                        Sigla = c.String(maxLength: 10),
+                        UF = c.String(maxLength: 2),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -88,12 +87,11 @@ namespace COGERTI.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        PlantaId = c.Int(nullable: false),
-                        LocalSite_Id = c.Int(),
+                        LocalSiteId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.LocalSites", t => t.LocalSite_Id)
-                .Index(t => t.LocalSite_Id);
+                .ForeignKey("dbo.LocalSites", t => t.LocalSiteId, cascadeDelete: false)
+                .Index(t => t.LocalSiteId);
             
             CreateTable(
                 "dbo.PropriedadeEquipamentos",
@@ -141,7 +139,9 @@ namespace COGERTI.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        DddCodigo = c.String(),
+                        DddCodigo = c.String(maxLength: 2),
+                        UF = c.String(maxLength: 2),
+                        Regiao = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -177,11 +177,11 @@ namespace COGERTI.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false),
-                        SerialNo = c.String(),
-                        Patrimonio = c.Double(),
+                        SerialNo = c.String(nullable: false),
+                        Patrimonio = c.String(maxLength: 6),
                         DataFabricacao = c.DateTime(),
-                        Marca = c.String(),
-                        Modelo = c.String(),
+                        Marca = c.String(nullable: false),
+                        Modelo = c.String(nullable: false),
                         PropriedadeId = c.Int(nullable: false),
                         StatusEquipamentoId = c.Int(nullable: false),
                     })
@@ -270,9 +270,9 @@ namespace COGERTI.Migrations
             DropForeignKey("dbo.Equipamentos", "PropriedadeId", "dbo.PropriedadeEquipamentos");
             DropForeignKey("dbo.Equipamentos", "Id", "dbo.Recursos");
             DropForeignKey("dbo.Funcionarios", "StatusFuncionarioId", "dbo.StatusFuncionarios");
-            DropForeignKey("dbo.Recursos", "LocalSite_Id", "dbo.LocalSites");
+            DropForeignKey("dbo.Recursos", "LocalSiteId", "dbo.LocalSites");
             DropForeignKey("dbo.AssociacaoRecursos", "RecursoId", "dbo.Recursos");
-            DropForeignKey("dbo.Funcionarios", "LocalSite_Id", "dbo.LocalSites");
+            DropForeignKey("dbo.Funcionarios", "LocalSiteId", "dbo.LocalSites");
             DropForeignKey("dbo.CentrosDeCustos", "Funcionario_UPI1", "dbo.Funcionarios");
             DropForeignKey("dbo.CentrosDeCustos", "Funcionario_UPI", "dbo.Funcionarios");
             DropForeignKey("dbo.Funcionarios", "CentroDeCustoId", "dbo.CentrosDeCustos");
@@ -292,15 +292,15 @@ namespace COGERTI.Migrations
             DropIndex("dbo.Equipamentos", new[] { "StatusEquipamentoId" });
             DropIndex("dbo.Equipamentos", new[] { "PropriedadeId" });
             DropIndex("dbo.Equipamentos", new[] { "Id" });
-            DropIndex("dbo.Recursos", new[] { "LocalSite_Id" });
+            DropIndex("dbo.Recursos", new[] { "LocalSiteId" });
             DropIndex("dbo.CentrosDeCustos", new[] { "Funcionario_UPI1" });
             DropIndex("dbo.CentrosDeCustos", new[] { "Funcionario_UPI" });
             DropIndex("dbo.CentrosDeCustos", new[] { "GestorCC_UPI" });
             DropIndex("dbo.CentrosDeCustos", new[] { "CoordenadorCC_UPI" });
-            DropIndex("dbo.Funcionarios", new[] { "LocalSite_Id" });
             DropIndex("dbo.Funcionarios", new[] { "CentroDeCusto_Id" });
             DropIndex("dbo.Funcionarios", new[] { "CentroDeCustoId" });
             DropIndex("dbo.Funcionarios", new[] { "StatusFuncionarioId" });
+            DropIndex("dbo.Funcionarios", new[] { "LocalSiteId" });
             DropIndex("dbo.AssociacaoRecursos", new[] { "RecursoId" });
             DropIndex("dbo.AssociacaoRecursos", new[] { "FuncionarioUPI" });
             DropTable("dbo.UsuariosVpn");
