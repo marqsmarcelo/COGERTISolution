@@ -160,6 +160,7 @@
     <Compile Include="Controllers\ComputadoresController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PropriedadeEquipamentosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +171,14 @@
     <Compile Include="Migrations\201811032051322_BasicPopulation.cs" />
     <Compile Include="Migrations\201811032051322_BasicPopulation.Designer.cs">
       <DependentUpon>201811032051322_BasicPopulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811032100089_Renaming.cs" />
+    <Compile Include="Migrations\201811032100089_Renaming.Designer.cs">
+      <DependentUpon>201811032100089_Renaming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811032114127_Renaming1.cs" />
+    <Compile Include="Migrations\201811032114127_Renaming1.Designer.cs">
+      <DependentUpon>201811032114127_Renaming1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AparelhoCelular.cs" />
@@ -252,6 +261,11 @@
     <Content Include="Views\CentrosDeCustos\Details.cshtml" />
     <Content Include="Views\CentrosDeCustos\Edit.cshtml" />
     <Content Include="Views\CentrosDeCustos\Index.cshtml" />
+    <Content Include="Views\PropriedadeEquipamentos\Create.cshtml" />
+    <Content Include="Views\PropriedadeEquipamentos\Delete.cshtml" />
+    <Content Include="Views\PropriedadeEquipamentos\Details.cshtml" />
+    <Content Include="Views\PropriedadeEquipamentos\Edit.cshtml" />
+    <Content Include="Views\PropriedadeEquipamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811032051322_BasicPopulation.resx">
       <DependentUpon>201811032051322_BasicPopulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811032100089_Renaming.resx">
+      <DependentUpon>201811032100089_Renaming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811032114127_Renaming1.resx">
+      <DependentUpon>201811032114127_Renaming1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

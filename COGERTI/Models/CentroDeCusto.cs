@@ -25,15 +25,19 @@ namespace COGERTI.Models
         }
         
         public int Id { get; set; }
+
+        [Display(Name = "Centro de Custo", Prompt = "Entre com o nome do Centro de Custo.")]
         public string Nome { get; set; }
 
-        [Display(Name = "Matrícula Coordenador", ShortName = "Teste")]
+        [Display(Name = "Matrícula Coordenador")]
         public Nullable<int> CoordenadorUPI { get; set; }
         [Display(Name = "Matrícula Gestor")]
         public Nullable<int> GestorUPI { get; set; }
 
+        [Display(ShortName = "Coordenador")]
         [ForeignKey("CoordenadorUPI")]
         public virtual Funcionario CoordenadorCC { get; set; }
+        [Display(Name = "Gestor")]
         [ForeignKey("GestorUPI")]
         public virtual Funcionario GestorCC { get; set; }
 
