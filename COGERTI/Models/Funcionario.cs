@@ -22,7 +22,7 @@ namespace COGERTI.Models
         public Funcionario()
         {
             this.CoordenadorCC = new HashSet<CentroDeCusto>();
-            this.AssociacaoRecurso = new HashSet<AssociacaoRecurso>();
+            this.Recurso = new HashSet<Recurso>();
             this.GestorCC = new HashSet<CentroDeCusto>();
         }
 
@@ -38,11 +38,14 @@ namespace COGERTI.Models
         public int StatusFuncionarioId { get; set; }
         [Display(Name = "Centro de Custo")]
         public int CentroDeCustoId { get; set; }
-    
+
+        [Display(Name = "Planta")]
         public virtual LocalSite LocalSite { get; set; }
+        [Display(Name = "Status Funcionário")]
         public virtual StatusFuncionario StatusFuncionario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AssociacaoRecurso> AssociacaoRecurso { get; set; }
+        public virtual ICollection<Recurso> Recurso { get; set; }
+        [Display(Name = "Centro de Custo")]
         public virtual CentroDeCusto CentroDeCusto { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

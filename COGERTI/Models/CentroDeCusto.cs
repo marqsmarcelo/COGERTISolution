@@ -29,12 +29,12 @@ namespace COGERTI.Models
         [Display(Name = "Centro de Custo", Prompt = "Entre com o nome do Centro de Custo.")]
         public string Nome { get; set; }
 
-        [Display(Name = "Matrícula Coordenador")]
+        [Display(Name = "Coordenador")]
         public Nullable<int> CoordenadorUPI { get; set; }
-        [Display(Name = "Matrícula Gestor")]
+        [Display(Name = "Gestor")]
         public Nullable<int> GestorUPI { get; set; }
 
-        [Display(ShortName = "Coordenador")]
+        [Display(Name = "Coordenador")]
         [ForeignKey("CoordenadorUPI")]
         public virtual Funcionario CoordenadorCC { get; set; }
         [Display(Name = "Gestor")]

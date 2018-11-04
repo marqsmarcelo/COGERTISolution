@@ -159,25 +159,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811032050468_InitialMigration.cs" />
-    <Compile Include="Migrations\201811032050468_InitialMigration.Designer.cs">
-      <DependentUpon>201811032050468_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201811041536338_InitialMigration.cs" />
+    <Compile Include="Migrations\201811041536338_InitialMigration.Designer.cs">
+      <DependentUpon>201811041536338_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811032051322_BasicPopulation.cs" />
-    <Compile Include="Migrations\201811032051322_BasicPopulation.Designer.cs">
-      <DependentUpon>201811032051322_BasicPopulation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811032100089_Renaming.cs" />
-    <Compile Include="Migrations\201811032100089_Renaming.Designer.cs">
-      <DependentUpon>201811032100089_Renaming.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811032114127_Renaming1.cs" />
-    <Compile Include="Migrations\201811032114127_Renaming1.Designer.cs">
-      <DependentUpon>201811032114127_Renaming1.cs</DependentUpon>
+    <Compile Include="Migrations\201811041537457_BasicPopulation.cs" />
+    <Compile Include="Migrations\201811041537457_BasicPopulation.Designer.cs">
+      <DependentUpon>201811041537457_BasicPopulation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AparelhoCelular.cs" />
-    <Compile Include="Models\AssociacaoRecurso.cs" />
     <Compile Include="Models\CentroDeCusto.cs" />
     <Compile Include="Models\CodigoDdd.cs" />
     <Compile Include="Models\Computador.cs" />
@@ -254,17 +245,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811032050468_InitialMigration.resx">
-      <DependentUpon>201811032050468_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811041536338_InitialMigration.resx">
+      <DependentUpon>201811041536338_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811032051322_BasicPopulation.resx">
-      <DependentUpon>201811032051322_BasicPopulation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811032100089_Renaming.resx">
-      <DependentUpon>201811032100089_Renaming.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811032114127_Renaming1.resx">
-      <DependentUpon>201811032114127_Renaming1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811041537457_BasicPopulation.resx">
+      <DependentUpon>201811041537457_BasicPopulation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
