@@ -1,0 +1,106 @@
+﻿@model COGERTI.Models.LinhaMovel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LinhaMovel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcionario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funcionario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalSite.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalSite.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAssociacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataAssociacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataLiberacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataLiberacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotivoLiberacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotivoLiberacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermoResponsabilidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermoResponsabilidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinhaNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinhaNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChipId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChipId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoDdd.DddCodigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoDdd.DddCodigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoLinha.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoLinha.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPlanoMovel.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPlanoMovel.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

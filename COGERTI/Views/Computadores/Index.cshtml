@@ -1,0 +1,111 @@
+﻿@model IEnumerable<COGERTI.Models.Computador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Funcionario.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocalSite.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAssociacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataLiberacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotivoLiberacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermoResponsabilidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patrimonio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFabricacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Propriedade.Lote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusEquipamento.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoComputador.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funcionario.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocalSite.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAssociacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataLiberacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotivoLiberacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermoResponsabilidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patrimonio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFabricacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Propriedade.Lote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusEquipamento.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoComputador.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

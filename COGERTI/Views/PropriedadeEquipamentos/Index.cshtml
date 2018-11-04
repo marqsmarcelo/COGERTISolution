@@ -1,0 +1,63 @@
+﻿@model IEnumerable<COGERTI.Models.PropriedadeEquipamento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PedidoSapNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContratoNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataRecebimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataTerminoGarantia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PedidoSapNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContratoNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataRecebimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataTerminoGarantia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

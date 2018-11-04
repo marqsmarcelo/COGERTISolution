@@ -1,0 +1,66 @@
+﻿@model COGERTI.Models.PropriedadeEquipamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PropriedadeEquipamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PedidoSapNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PedidoSapNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContratoNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContratoNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataRecebimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataRecebimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataTerminoGarantia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataTerminoGarantia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

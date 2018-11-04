@@ -38,7 +38,13 @@ namespace COGERTI.Models
         public DbSet<TipoLinha> TiposLinhas { get; set; }
         public DbSet<TipoPlanoMovel> TiposPlanosMoveis { get; set; }
 
-        //public System.Data.Entity.DbSet<COGERTI.Models.Computador> Computadores { get; set; }
+        public System.Data.Entity.DbSet<COGERTI.Models.Computador> Computadores { get; set; }
+
+        public System.Data.Entity.DbSet<COGERTI.Models.LinhaMovel> LinhasMoveis { get; set; }
+
+        public System.Data.Entity.DbSet<COGERTI.Models.AparelhoCelular> AparelhosCelulares { get; set; }
+
+        public System.Data.Entity.DbSet<COGERTI.Models.UsuarioVpn> UsuariosVpn { get; set; }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
