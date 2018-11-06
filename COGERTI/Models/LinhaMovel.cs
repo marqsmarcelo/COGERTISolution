@@ -15,7 +15,7 @@ namespace COGERTI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("LinhasMoveis")]
+    [Table("LinhaMovel")]
     public partial class LinhaMovel : Recurso
     {
         [Display(Name = "Linha No")]
@@ -28,7 +28,10 @@ namespace COGERTI.Models
         public int TipoLinhaId { get; set; }
         [Display(Name = "Plano Celular")]
         public int TipoPlanoMovelId { get; set; }
-    
+        [Display(Name = "Status da Linha")]
+        public int StatusLinhaId { get; set; }
+
+        public virtual StatusLinha StatusLinha { get; set; }
         public virtual CodigoDdd CodigoDdd { get; set; }
         public virtual TipoLinha TipoLinha { get; set; }
         public virtual TipoPlanoMovel TipoPlanoMovel { get; set; }

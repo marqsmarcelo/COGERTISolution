@@ -163,8 +163,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinhasMoveisController.cs" />
     <Compile Include="Controllers\LocalSitesController.cs" />
-    <Compile Include="Controllers\PropriedadeEquipamentosController.cs" />
-    <Compile Include="Controllers\UsuariosVpnController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +178,14 @@
     <Compile Include="Migrations\201811041605213_RequiredResourceFix.Designer.cs">
       <DependentUpon>201811041605213_RequiredResourceFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811061500148_StatusLinhasETipoPropriedadeEnum.cs" />
+    <Compile Include="Migrations\201811061500148_StatusLinhasETipoPropriedadeEnum.Designer.cs">
+      <DependentUpon>201811061500148_StatusLinhasETipoPropriedadeEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811061512512_UsuariosVpnDelete.cs" />
+    <Compile Include="Migrations\201811061512512_UsuariosVpnDelete.Designer.cs">
+      <DependentUpon>201811061512512_UsuariosVpnDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AparelhoCelular.cs" />
     <Compile Include="Models\CentroDeCusto.cs" />
@@ -194,11 +200,11 @@
     <Compile Include="Models\RecursosDB.cs" />
     <Compile Include="Models\StatusEquipamento.cs" />
     <Compile Include="Models\StatusFuncionario.cs" />
+    <Compile Include="Models\StatusLinha.cs" />
     <Compile Include="Models\TipoAparelhoCelular.cs" />
     <Compile Include="Models\TipoComputador.cs" />
     <Compile Include="Models\TipoLinha.cs" />
     <Compile Include="Models\TipoPlanoMovel.cs" />
-    <Compile Include="Models\UsuarioVpn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -245,11 +251,6 @@
     <Content Include="Views\Computadores\Details.cshtml" />
     <Content Include="Views\Computadores\Edit.cshtml" />
     <Content Include="Views\Computadores\Index.cshtml" />
-    <Content Include="Views\LinhasMoveis\Create.cshtml" />
-    <Content Include="Views\LinhasMoveis\Delete.cshtml" />
-    <Content Include="Views\LinhasMoveis\Details.cshtml" />
-    <Content Include="Views\LinhasMoveis\Edit.cshtml" />
-    <Content Include="Views\LinhasMoveis\Index.cshtml" />
     <Content Include="Views\AparelhosCelulares\Create.cshtml" />
     <Content Include="Views\AparelhosCelulares\Delete.cshtml" />
     <Content Include="Views\AparelhosCelulares\Details.cshtml" />
@@ -275,16 +276,11 @@
     <Content Include="Views\LocalSites\Details.cshtml" />
     <Content Include="Views\LocalSites\Edit.cshtml" />
     <Content Include="Views\LocalSites\Index.cshtml" />
-    <Content Include="Views\PropriedadeEquipamentos\Create.cshtml" />
-    <Content Include="Views\PropriedadeEquipamentos\Delete.cshtml" />
-    <Content Include="Views\PropriedadeEquipamentos\Details.cshtml" />
-    <Content Include="Views\PropriedadeEquipamentos\Edit.cshtml" />
-    <Content Include="Views\PropriedadeEquipamentos\Index.cshtml" />
-    <Content Include="Views\UsuariosVpn\Create.cshtml" />
-    <Content Include="Views\UsuariosVpn\Delete.cshtml" />
-    <Content Include="Views\UsuariosVpn\Details.cshtml" />
-    <Content Include="Views\UsuariosVpn\Edit.cshtml" />
-    <Content Include="Views\UsuariosVpn\Index.cshtml" />
+    <Content Include="Views\LinhasMoveis\Create.cshtml" />
+    <Content Include="Views\LinhasMoveis\Delete.cshtml" />
+    <Content Include="Views\LinhasMoveis\Details.cshtml" />
+    <Content Include="Views\LinhasMoveis\Edit.cshtml" />
+    <Content Include="Views\LinhasMoveis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,6 +307,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811041605213_RequiredResourceFix.resx">
       <DependentUpon>201811041605213_RequiredResourceFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811061500148_StatusLinhasETipoPropriedadeEnum.resx">
+      <DependentUpon>201811061500148_StatusLinhasETipoPropriedadeEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811061512512_UsuariosVpnDelete.resx">
+      <DependentUpon>201811061512512_UsuariosVpnDelete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -209,7 +209,7 @@ namespace COGERTI.Migrations
                 .Index(t => t.TipoComputadorId);
             
             CreateTable(
-                "dbo.LinhasMoveis",
+                "dbo.LinhaMovel",
                 c => new
                     {
                         Id = c.Int(nullable: false),
@@ -245,10 +245,10 @@ namespace COGERTI.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.UsuariosVpn", "Id", "dbo.Recursos");
-            DropForeignKey("dbo.LinhasMoveis", "TipoPlanoMovelId", "dbo.TiposPlanosMoveis");
-            DropForeignKey("dbo.LinhasMoveis", "TipoLinhaId", "dbo.TiposLinhas");
-            DropForeignKey("dbo.LinhasMoveis", "CodigoDddId", "dbo.CodigosDdd");
-            DropForeignKey("dbo.LinhasMoveis", "Id", "dbo.Recursos");
+            DropForeignKey("dbo.LinhaMovel", "TipoPlanoMovelId", "dbo.TiposPlanosMoveis");
+            DropForeignKey("dbo.LinhaMovel", "TipoLinhaId", "dbo.TiposLinhas");
+            DropForeignKey("dbo.LinhaMovel", "CodigoDddId", "dbo.CodigosDdd");
+            DropForeignKey("dbo.LinhaMovel", "Id", "dbo.Recursos");
             DropForeignKey("dbo.Computadores", "TipoComputadorId", "dbo.TiposComputadores");
             DropForeignKey("dbo.Computadores", "Id", "dbo.Equipamentos");
             DropForeignKey("dbo.AparelhosCelulares", "TipoAparelhoCelularId", "dbo.TiposAparelhosCelulares");
@@ -267,10 +267,10 @@ namespace COGERTI.Migrations
             DropForeignKey("dbo.CentrosDeCustos", "Funcionario_UPI", "dbo.Funcionarios");
             DropForeignKey("dbo.Funcionarios", "CentroDeCustoId", "dbo.CentrosDeCustos");
             DropIndex("dbo.UsuariosVpn", new[] { "Id" });
-            DropIndex("dbo.LinhasMoveis", new[] { "TipoPlanoMovelId" });
-            DropIndex("dbo.LinhasMoveis", new[] { "TipoLinhaId" });
-            DropIndex("dbo.LinhasMoveis", new[] { "CodigoDddId" });
-            DropIndex("dbo.LinhasMoveis", new[] { "Id" });
+            DropIndex("dbo.LinhaMovel", new[] { "TipoPlanoMovelId" });
+            DropIndex("dbo.LinhaMovel", new[] { "TipoLinhaId" });
+            DropIndex("dbo.LinhaMovel", new[] { "CodigoDddId" });
+            DropIndex("dbo.LinhaMovel", new[] { "Id" });
             DropIndex("dbo.Computadores", new[] { "TipoComputadorId" });
             DropIndex("dbo.Computadores", new[] { "Id" });
             DropIndex("dbo.AparelhosCelulares", new[] { "TipoAparelhoCelularId" });
@@ -289,7 +289,7 @@ namespace COGERTI.Migrations
             DropIndex("dbo.CentrosDeCustos", new[] { "GestorUPI" });
             DropIndex("dbo.CentrosDeCustos", new[] { "CoordenadorUPI" });
             DropTable("dbo.UsuariosVpn");
-            DropTable("dbo.LinhasMoveis");
+            DropTable("dbo.LinhaMovel");
             DropTable("dbo.Computadores");
             DropTable("dbo.AparelhosCelulares");
             DropTable("dbo.Equipamentos");

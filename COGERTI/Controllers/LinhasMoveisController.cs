@@ -17,7 +17,7 @@ namespace COGERTI.Controllers
         // GET: LinhasMoveis
         public ActionResult Index()
         {
-            var linhasMoveis = db.LinhasMoveis.Include(l => l.Funcionario).Include(l => l.LocalSite).Include(l => l.CodigoDdd).Include(l => l.TipoLinha).Include(l => l.TipoPlanoMovel);
+            var linhasMoveis = db.LinhasMoveis.Include(l => l.Funcionario).Include(l => l.LocalSite).Include(l => l.CodigoDdd).Include(l => l.StatusLinha).Include(l => l.TipoLinha).Include(l => l.TipoPlanoMovel);
             return View(linhasMoveis.ToList());
         }
 
@@ -42,6 +42,7 @@ namespace COGERTI.Controllers
             ViewBag.FuncionarioUPI = new SelectList(db.Funcionarios, "UPI", "Nome");
             ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome");
             ViewBag.CodigoDddId = new SelectList(db.CodigosDdd, "Id", "DddCodigo");
+            ViewBag.StatusLinhaId = new SelectList(db.StatusLinhas, "Id", "Descricao");
             ViewBag.TipoLinhaId = new SelectList(db.TiposLinhas, "Id", "Descricao");
             ViewBag.TipoPlanoMovelId = new SelectList(db.TiposPlanosMoveis, "Id", "Descricao");
             return View();
@@ -52,7 +53,7 @@ namespace COGERTI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LocalSiteId,FuncionarioUPI,DataAssociacao,DataLiberacao,MotivoLiberacao,TermoResponsabilidade,LinhaNo,ChipId,CodigoDddId,TipoLinhaId,TipoPlanoMovelId")] LinhaMovel linhaMovel)
+        public ActionResult Create([Bind(Include = "Id,LocalSiteId,FuncionarioUPI,DataAssociacao,DataLiberacao,MotivoLiberacao,TermoResponsabilidade,LinhaNo,ChipId,CodigoDddId,TipoLinhaId,TipoPlanoMovelId,StatusLinhaId")] LinhaMovel linhaMovel)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +65,7 @@ namespace COGERTI.Controllers
             ViewBag.FuncionarioUPI = new SelectList(db.Funcionarios, "UPI", "Nome", linhaMovel.FuncionarioUPI);
             ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome", linhaMovel.LocalSiteId);
             ViewBag.CodigoDddId = new SelectList(db.CodigosDdd, "Id", "DddCodigo", linhaMovel.CodigoDddId);
+            ViewBag.StatusLinhaId = new SelectList(db.StatusLinhas, "Id", "Descricao", linhaMovel.StatusLinhaId);
             ViewBag.TipoLinhaId = new SelectList(db.TiposLinhas, "Id", "Descricao", linhaMovel.TipoLinhaId);
             ViewBag.TipoPlanoMovelId = new SelectList(db.TiposPlanosMoveis, "Id", "Descricao", linhaMovel.TipoPlanoMovelId);
             return View(linhaMovel);
@@ -84,6 +86,7 @@ namespace COGERTI.Controllers
             ViewBag.FuncionarioUPI = new SelectList(db.Funcionarios, "UPI", "Nome", linhaMovel.FuncionarioUPI);
             ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome", linhaMovel.LocalSiteId);
             ViewBag.CodigoDddId = new SelectList(db.CodigosDdd, "Id", "DddCodigo", linhaMovel.CodigoDddId);
+            ViewBag.StatusLinhaId = new SelectList(db.StatusLinhas, "Id", "Descricao", linhaMovel.StatusLinhaId);
             ViewBag.TipoLinhaId = new SelectList(db.TiposLinhas, "Id", "Descricao", linhaMovel.TipoLinhaId);
             ViewBag.TipoPlanoMovelId = new SelectList(db.TiposPlanosMoveis, "Id", "Descricao", linhaMovel.TipoPlanoMovelId);
             return View(linhaMovel);
@@ -94,7 +97,7 @@ namespace COGERTI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LocalSiteId,FuncionarioUPI,DataAssociacao,DataLiberacao,MotivoLiberacao,TermoResponsabilidade,LinhaNo,ChipId,CodigoDddId,TipoLinhaId,TipoPlanoMovelId")] LinhaMovel linhaMovel)
+        public ActionResult Edit([Bind(Include = "Id,LocalSiteId,FuncionarioUPI,DataAssociacao,DataLiberacao,MotivoLiberacao,TermoResponsabilidade,LinhaNo,ChipId,CodigoDddId,TipoLinhaId,TipoPlanoMovelId,StatusLinhaId")] LinhaMovel linhaMovel)
         {
             if (ModelState.IsValid)
             {
@@ -105,6 +108,7 @@ namespace COGERTI.Controllers
             ViewBag.FuncionarioUPI = new SelectList(db.Funcionarios, "UPI", "Nome", linhaMovel.FuncionarioUPI);
             ViewBag.LocalSiteId = new SelectList(db.LocalSites, "Id", "Nome", linhaMovel.LocalSiteId);
             ViewBag.CodigoDddId = new SelectList(db.CodigosDdd, "Id", "DddCodigo", linhaMovel.CodigoDddId);
+            ViewBag.StatusLinhaId = new SelectList(db.StatusLinhas, "Id", "Descricao", linhaMovel.StatusLinhaId);
             ViewBag.TipoLinhaId = new SelectList(db.TiposLinhas, "Id", "Descricao", linhaMovel.TipoLinhaId);
             ViewBag.TipoPlanoMovelId = new SelectList(db.TiposPlanosMoveis, "Id", "Descricao", linhaMovel.TipoPlanoMovelId);
             return View(linhaMovel);

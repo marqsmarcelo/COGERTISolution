@@ -25,6 +25,7 @@ namespace COGERTI.Models
         public DbSet<LocalSite> LocalSites { get; set; }
         public DbSet<StatusFuncionario> StatusFuncionarios { get; set; }
         public DbSet<StatusEquipamento> StatusEquipamentos { get; set; }
+        public DbSet<StatusLinha> StatusLinhas { get; set; }
         public DbSet<TipoComputador> TiposComputadores { get; set; }
         public DbSet<PropriedadeEquipamento> PropriedadeEquipamentos { get; set; }
         public DbSet<TipoAparelhoCelular> TiposAparelhosCelulares { get; set; }
@@ -34,10 +35,8 @@ namespace COGERTI.Models
 
         public System.Data.Entity.DbSet<COGERTI.Models.Computador> Computadores { get; set; }
 
-        public System.Data.Entity.DbSet<COGERTI.Models.LinhaMovel> LinhasMoveis { get; set; }
-
         public System.Data.Entity.DbSet<COGERTI.Models.AparelhoCelular> AparelhosCelulares { get; set; }
 
-        public System.Data.Entity.DbSet<COGERTI.Models.UsuarioVpn> UsuariosVpn { get; set; }
+        public System.Data.Entity.DbSet<COGERTI.Models.LinhaMovel> LinhasMoveis { get; set; }
     }
 }
