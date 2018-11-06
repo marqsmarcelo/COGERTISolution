@@ -41,8 +41,17 @@ namespace COGERTI.Models
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public Nullable<System.DateTime> DataTerminoGarantia { get; set; }
+        [Display(Name = "Tipo de Propriedade")]
+        public TipoPropriedade TipoPropriedade { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Equipamento> Equipamento { get; set; }
+    }
+
+    public enum TipoPropriedade
+    {
+        Compra,
+        Leasing,
+        Comodato
     }
 }

@@ -44,9 +44,10 @@ namespace COGERTI.Migrations
             Sql("SET IDENTITY_INSERT CodigosDdd OFF");
 
             Sql("SET IDENTITY_INSERT StatusEquipamentos ON");
-            Sql("INSERT INTO StatusEquipamentos(Id, Descricao) VALUES (1, 'Funcional')");
+            Sql("INSERT INTO StatusEquipamentos(Id, Descricao) VALUES (1, 'Em estoque')");
             Sql("INSERT INTO StatusEquipamentos(Id, Descricao) VALUES (2, 'Em conserto')");
-            Sql("INSERT INTO StatusEquipamentos(Id, Descricao) VALUES (3, 'Para descarte')");
+            Sql("INSERT INTO StatusEquipamentos(Id, Descricao) VALUES (3, 'Pilha de descarte')");
+            Sql("INSERT INTO StatusEquipamentos(Id, Descricao) VALUES (3, 'Descartado')");
             Sql("SET IDENTITY_INSERT StatusEquipamentos OFF");
 
             Sql("SET IDENTITY_INSERT TiposAparelhosCelulares ON");

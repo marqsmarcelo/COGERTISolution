@@ -30,8 +30,7 @@ namespace COGERTI.Models
         public int LocalSiteId { get; set; }
 
         [Display(Name = "Funcionário")]
-        [Required]
-        public int FuncionarioUPI { get; set; }
+        public int? FuncionarioUPI { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]

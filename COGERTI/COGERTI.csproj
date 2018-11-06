@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201811041537457_BasicPopulation.Designer.cs">
       <DependentUpon>201811041537457_BasicPopulation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811041605213_RequiredResourceFix.cs" />
+    <Compile Include="Migrations\201811041605213_RequiredResourceFix.Designer.cs">
+      <DependentUpon>201811041605213_RequiredResourceFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AparelhoCelular.cs" />
     <Compile Include="Models\CentroDeCusto.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811041537457_BasicPopulation.resx">
       <DependentUpon>201811041537457_BasicPopulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811041605213_RequiredResourceFix.resx">
+      <DependentUpon>201811041605213_RequiredResourceFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
